@@ -35,7 +35,7 @@
             Generate human readable output
         */ 
         protected function set_output() {
-            if ($this->regex == "([a-z]){3}([0-9]){3}") {
+            if ($this->regex == "(\r|\n|\s)([a-z]){3}([0-9]){3}") {
                 return "XXXDDD";
             }
             return $this->regex;

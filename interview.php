@@ -24,17 +24,19 @@ $file = fopen("data/total.loss.csv", "r");
 $data = "";
 
 if ($file) {
-	while (($line = fgets($file)) !== false) {
-		$data .= $line;
-	};
+	while (($line = fgetcsv($file)) !== false) {
+		$data .= " $line[1]";
+	}
 }
+
+echo "\n$data\n";
 
 $occurance_a = new Occurance($data, "Total Loss");
 $occurance_b = new Occurance($data, "t/loss");
 $occurance_c = new Occurance($data, "total/l");
 $occurance_d = new Occurance($data, "towed");
 $occurance_e = new Occurance($data, "t/l");
-$occurance_f = new Occurance($data, "([a-z]){3}([0-9]){3}");
+$occurance_f = new Occurance($data, "(\r|\n|\s)([a-z]){3}([0-9]){3}");
 
 echo $occurance_a;
 echo $occurance_b;
