@@ -29,8 +29,6 @@ if ($file) {
 	}
 }
 
-echo "\n$data\n";
-
 $occurance_a = new Occurance($data, "Total Loss");
 $occurance_b = new Occurance($data, "t/loss");
 $occurance_c = new Occurance($data, "total/l");
